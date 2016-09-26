@@ -18,9 +18,9 @@ static UILabel *showingLabel_;
 #define ZLIScreenHeight [UIScreen mainScreen].bounds.size.height
 
 static CGFloat const ZLITimeInterval = 0.75f;
-static CGFloat const ZLTimeDelay = 1.0f;
-static CGFloat const ZLFontSize = 15;
-static CGFloat const ZLShowingLabelHeight = 35;
+static CGFloat const ZLITimeDelay = 1.0f;
+static CGFloat const ZLIFontSize = 15;
+static CGFloat const ZLIShowingLabelHeight = 35;
 
 @interface ZLIndicatorMessageHUD()
 
@@ -37,14 +37,14 @@ static CGFloat const ZLShowingLabelHeight = 35;
     window_.hidden = NO;
     
     UILabel *showingView = [[UILabel alloc] init];
-    showingView.zl_height = ZLShowingLabelHeight;
+    showingView.zl_height = ZLIShowingLabelHeight;
     showingView.backgroundColor = [UIColor blackColor];
     showingView.alpha = 0;
     showingView.textAlignment = NSTextAlignmentCenter;
     showingView.textColor = [UIColor whiteColor];
-    showingView.font = [UIFont systemFontOfSize:ZLFontSize];
+    showingView.font = [UIFont systemFontOfSize:ZLIFontSize];
     
-    [showingView setRoundViewWithCornerRaidus:ZLShowingLabelHeight/2];
+    [showingView setRoundViewWithCornerRaidus:ZLIShowingLabelHeight/2];
     
     UIViewController *rootVC = [[UIViewController alloc] init];
     window_.rootViewController = rootVC;
@@ -80,7 +80,7 @@ static CGFloat const ZLShowingLabelHeight = 35;
     [self showWindow];
     showingLabel_.text = message;
     [self setShowingLabelWidth];
-    [UIView animateWithDuration:ZLTimeDelay animations:^{
+    [UIView animateWithDuration:ZLITimeDelay animations:^{
         showingLabel_.alpha = 0.74;
     } completion:^(BOOL finished) {
         [self hide];
@@ -89,7 +89,14 @@ static CGFloat const ZLShowingLabelHeight = 35;
 
 + (void)setShowingLabelWidth {
     CGSize maxSzie = CGSizeMake(MAXFLOAT, showingLabel_.zl_height);
-    showingLabel_.zl_width = [showingLabel_.text sizeWithMaxSize:maxSzie font:ZLFontSize].width + 30;
+    CGFloat width = [showingLabel_.text sizeWithMaxSize:maxSzie font:ZLIFontSize].width + 30;
+    if (width >= ZLIScreenWidth) {
+        showingLabel_.text = @"显示信息太长，请精简一下！";
+        width = [showingLabel_.text sizeWithMaxSize:maxSzie font:ZLIFontSize].width + 30;
+    }
+    showingLabel_.zl_width = width;
     showingLabel_.center = window_.rootViewController.view.center;
 }
+
+
 @end

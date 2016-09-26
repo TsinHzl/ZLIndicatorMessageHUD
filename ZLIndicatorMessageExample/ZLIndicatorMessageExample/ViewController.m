@@ -28,9 +28,12 @@
     [ZLIndicatorMessageHUD showLoadingMessage];
     [self performSelector:@selector(didReceiveMemoryWarning) withObject:self afterDelay:2];
 }
-
 - (void)test2 {
-    [ZLIndicatorMessageHUD showWithMessage:@"测试信息测试信息测试信息测试信息"];
+    [ZLIndicatorMessageHUD showWithMessage:@"测试信息测试信息"];
+}
+
+- (void)test3 {
+    [ZLIndicatorMessageHUD showWithMessage:@"测试信息测试信息测试信息测试信息测试信息测试信息测试信息测试信息测试信息测试信息测试信息测试信息"];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
