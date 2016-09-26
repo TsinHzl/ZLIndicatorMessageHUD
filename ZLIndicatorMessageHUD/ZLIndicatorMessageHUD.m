@@ -18,7 +18,7 @@ static UILabel *showingLabel_;
 #define ZLIScreenHeight [UIScreen mainScreen].bounds.size.height
 
 static CGFloat const ZLITimeInterval = 0.75f;
-static CGFloat const ZLTimeDelay = 1.5f;
+static CGFloat const ZLTimeDelay = 1.0f;
 static CGFloat const ZLFontSize = 15;
 static CGFloat const ZLShowingLabelHeight = 35;
 
@@ -62,7 +62,7 @@ static CGFloat const ZLShowingLabelHeight = 35;
 
 + (void)showLoadingMessage {
     [self showWindow];
-    showingLabel_.text = @"Loading...";
+    showingLabel_.text = @"正在加载，请稍等...";
     [self setShowingLabelWidth];
 }
 
