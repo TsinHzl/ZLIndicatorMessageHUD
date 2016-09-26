@@ -20,7 +20,7 @@ static UILabel *showingLabel_;
 static CGFloat const ZLITimeInterval = 0.75f;
 static CGFloat const ZLITimeDelay = 1.0f;
 static CGFloat const ZLIFontSize = 15;
-static CGFloat const ZLIShowingLabelHeight = 35;
+static CGFloat const ZLIShowingLabelHeight = 45.0f;
 
 @interface ZLIndicatorMessageHUD()
 
