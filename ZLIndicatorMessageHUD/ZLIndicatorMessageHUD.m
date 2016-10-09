@@ -91,6 +91,7 @@ static CGFloat const ZLIShowingLabelHeight = 45.0f;
     CGSize maxSzie = CGSizeMake(MAXFLOAT, showingLabel_.zl_height);
     CGFloat width = [showingLabel_.text sizeWithMaxSize:maxSzie font:ZLIFontSize].width + 30;
     if (width >= ZLIScreenWidth) {
+        NSLog(@"显示信息太长，请精简一下！");
         showingLabel_.text = @"显示信息太长，请精简一下！";
         width = [showingLabel_.text sizeWithMaxSize:maxSzie font:ZLIFontSize].width + 30;
     }
