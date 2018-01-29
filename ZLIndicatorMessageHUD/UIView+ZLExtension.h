@@ -21,7 +21,7 @@
 @property(nonatomic, assign)CGFloat zl_centerX;
 @property(nonatomic, assign)CGFloat zl_centerY;
 
-- (void)setRoundViewWithCornerRaidus:(CGFloat)cornerRadius;
+- (void)zl_setRoundViewWithCornerRaidus:(CGFloat)cornerRadius;
 
 
 @end

@@ -439,6 +439,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ZLIndicatorMessageExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = TsinMac.ZLIndicatorMessageExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -450,6 +451,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ZLIndicatorMessageExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = TsinMac.ZLIndicatorMessageExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -523,6 +525,7 @@
 				EA5DCC9E1D98BD5400E213A5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EA5DCC9F1D98BD5400E213A5 /* Build configuration list for PBXNativeTarget "ZLIndicatorMessageExampleTests" */ = {
 			isa = XCConfigurationList;
@@ -531,6 +534,7 @@
 				EA5DCCA11D98BD5400E213A5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EA5DCCA21D98BD5400E213A5 /* Build configuration list for PBXNativeTarget "ZLIndicatorMessageExampleUITests" */ = {
 			isa = XCConfigurationList;
@@ -539,6 +543,7 @@
 				EA5DCCA41D98BD5400E213A5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -10,8 +10,10 @@
 
 @interface ZLIndicatorMessageHUD : NSObject
 
-+ (void)showLoadingMessage;
-+ (void)hide;
-+ (void)showWithMessage:(NSString *)message;
++ (void)zl_showLoadingMessage;
++ (void)zl_showWithMessage:(NSString *)message;
+
++ (void)zl_showWithMessage:(NSString *)message timeDelay:(CGFloat)timeDelay;
++ (void)zl_hide;
 
 @end

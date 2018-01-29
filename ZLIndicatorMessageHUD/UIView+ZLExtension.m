@@ -105,7 +105,7 @@
     self.center = center;
 }
 
-- (void)setRoundViewWithCornerRaidus:(CGFloat)cornerRadius
+- (void)zl_setRoundViewWithCornerRaidus:(CGFloat)cornerRadius
 {
     self.layer.masksToBounds = YES;
     self.layer.cornerRadius = cornerRadius;

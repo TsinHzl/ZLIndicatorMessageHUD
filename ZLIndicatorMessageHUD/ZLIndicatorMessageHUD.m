@@ -18,9 +18,11 @@ static UILabel *showingLabel_;
 #define ZLIScreenHeight [UIScreen mainScreen].bounds.size.height
 
 static CGFloat const ZLITimeInterval = 0.75f;
-static CGFloat const ZLITimeDelay = 1.0f;
-static CGFloat const ZLIFontSize = 15;
+static CGFloat const ZLITimeDelay = 1.5f;
+static CGFloat const ZLIFontSize = 15.0f;
 static CGFloat const ZLIShowingLabelHeight = 45.0f;
+static CGFloat const ZLShowingViewAlpha = 0.75f;
+
 
 @interface ZLIndicatorMessageHUD()
 
@@ -44,7 +46,7 @@ static CGFloat const ZLIShowingLabelHeight = 45.0f;
     showingView.textColor = [UIColor whiteColor];
     showingView.font = [UIFont systemFontOfSize:ZLIFontSize];
     
-    [showingView setRoundViewWithCornerRaidus:ZLIShowingLabelHeight/2];
+    [showingView zl_setRoundViewWithCornerRaidus:ZLIShowingLabelHeight/2];
     
     UIViewController *rootVC = [[UIViewController alloc] init];
     window_.rootViewController = rootVC;
@@ -53,20 +55,20 @@ static CGFloat const ZLIShowingLabelHeight = 45.0f;
     showingLabel_ = showingView;
     
     [UIView animateWithDuration:ZLITimeInterval animations:^{
-        showingView.alpha = 0.75;
+        showingView.alpha = ZLShowingViewAlpha;
     } completion:^(BOOL finished) {
         
     }];
     
 }
 
-+ (void)showLoadingMessage {
++ (void)zl_showLoadingMessage {
     [self showWindow];
     showingLabel_.text = @"正在加载，请稍等...";
     [self setShowingLabelWidth];
 }
 
-+ (void)hide {
++ (void)zl_hide {
     [UIView animateWithDuration:ZLITimeInterval animations:^{
         showingLabel_.alpha = 0;
     } completion:^(BOOL finished) {
@@ -76,15 +78,8 @@ static CGFloat const ZLIShowingLabelHeight = 45.0f;
     }];
 }
 
-+ (void)showWithMessage:(NSString *)message {
-    [self showWindow];
-    showingLabel_.text = message;
-    [self setShowingLabelWidth];
-    [UIView animateWithDuration:ZLITimeDelay animations:^{
-        showingLabel_.alpha = 0.74;
-    } completion:^(BOOL finished) {
-        [self hide];
-    }];
++ (void)zl_showWithMessage:(NSString *)message {
+    [self zl_showWithMessage:message timeDelay:0];
 }
 
 + (void)setShowingLabelWidth {
@@ -99,5 +94,20 @@ static CGFloat const ZLIShowingLabelHeight = 45.0f;
     showingLabel_.center = window_.rootViewController.view.center;
 }
 
++ (void)zl_showWithMessage:(NSString *)message timeDelay:(CGFloat)timeDelay {
+    [self showWindow];
+    
+    showingLabel_.text = message;
+    [self setShowingLabelWidth];
+    [UIView animateWithDuration:ZLITimeInterval animations:^{
+        showingLabel_.alpha = ZLShowingViewAlpha;
+    } completion:^(BOOL finished) {
+        
+        dispatch_after((timeDelay > 0 ? timeDelay : ZLITimeDelay), dispatch_get_main_queue(), ^{
+            [self zl_hide];
+        });
+        
+    }];
+}
 
 @end
