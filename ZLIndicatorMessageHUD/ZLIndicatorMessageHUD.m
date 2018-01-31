@@ -103,7 +103,7 @@ static CGFloat const ZLShowingViewAlpha = 0.75f;
         showingLabel_.alpha = ZLShowingViewAlpha;
     } completion:^(BOOL finished) {
         
-        dispatch_after((timeDelay > 0 ? timeDelay : ZLITimeDelay), dispatch_get_main_queue(), ^{
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)((timeDelay > 0 ? timeDelay : ZLITimeDelay) * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [self zl_hide];
         });
         

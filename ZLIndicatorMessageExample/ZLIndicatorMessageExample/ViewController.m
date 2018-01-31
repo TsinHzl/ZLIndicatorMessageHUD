@@ -26,16 +26,16 @@
 - (void)test1 {
     self.view.backgroundColor = [UIColor cyanColor];
     [ZLIndicatorMessageHUD zl_showLoadingMessage];
-    [self performSelector:@selector(didReceiveMemoryWarning) withObject:self afterDelay:2];
+    [self performSelector:@selector(hide) withObject:self afterDelay:2];
 }
 - (void)test2 {
-    [ZLIndicatorMessageHUD zl_showWithMessage:@"测试信息测试信息" timeDelay:3.0];
+    [ZLIndicatorMessageHUD zl_showWithMessage:@"测试信息测试信息" timeDelay:0.5];
 }
 
 - (void)test3 {
     [ZLIndicatorMessageHUD zl_showWithMessage:@"测试信息测试信息测试信息测试信息测试信息测试信息测试信息测试信息测试信息测试信息测试信息测试信息"];
 }
-- (void)didReceiveMemoryWarning {
+- (void)hide {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
     [ZLIndicatorMessageHUD zl_hide];
