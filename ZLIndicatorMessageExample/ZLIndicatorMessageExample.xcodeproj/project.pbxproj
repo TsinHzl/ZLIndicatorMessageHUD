@@ -15,7 +15,7 @@
 		EA5DCC821D98BD5300E213A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA5DCC801D98BD5300E213A5 /* LaunchScreen.storyboard */; };
 		EA5DCC8D1D98BD5400E213A5 /* ZLIndicatorMessageExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EA5DCC8C1D98BD5400E213A5 /* ZLIndicatorMessageExampleTests.m */; };
 		EA5DCC981D98BD5400E213A5 /* ZLIndicatorMessageExampleUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = EA5DCC971D98BD5400E213A5 /* ZLIndicatorMessageExampleUITests.m */; };
-		EA5DCCAC1D98BDC100E213A5 /* NSString+Size.m in Sources */ = {isa = PBXBuildFile; fileRef = EA5DCCA71D98BDC100E213A5 /* NSString+Size.m */; };
+		EA5DCCAC1D98BDC100E213A5 /* NSString+ZLSize.m in Sources */ = {isa = PBXBuildFile; fileRef = EA5DCCA71D98BDC100E213A5 /* NSString+ZLSize.m */; };
 		EA5DCCAD1D98BDC100E213A5 /* UIView+ZLExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = EA5DCCA91D98BDC100E213A5 /* UIView+ZLExtension.m */; };
 		EA5DCCAE1D98BDC100E213A5 /* ZLIndicatorMessageHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = EA5DCCAB1D98BDC100E213A5 /* ZLIndicatorMessageHUD.m */; };
 /* End PBXBuildFile section */
@@ -54,8 +54,8 @@
 		EA5DCC931D98BD5400E213A5 /* ZLIndicatorMessageExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZLIndicatorMessageExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA5DCC971D98BD5400E213A5 /* ZLIndicatorMessageExampleUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZLIndicatorMessageExampleUITests.m; sourceTree = "<group>"; };
 		EA5DCC991D98BD5400E213A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EA5DCCA61D98BDC100E213A5 /* NSString+Size.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Size.h"; sourceTree = "<group>"; };
-		EA5DCCA71D98BDC100E213A5 /* NSString+Size.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Size.m"; sourceTree = "<group>"; };
+		EA5DCCA61D98BDC100E213A5 /* NSString+ZLSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ZLSize.h"; sourceTree = "<group>"; };
+		EA5DCCA71D98BDC100E213A5 /* NSString+ZLSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ZLSize.m"; sourceTree = "<group>"; };
 		EA5DCCA81D98BDC100E213A5 /* UIView+ZLExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ZLExtension.h"; sourceTree = "<group>"; };
 		EA5DCCA91D98BDC100E213A5 /* UIView+ZLExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ZLExtension.m"; sourceTree = "<group>"; };
 		EA5DCCAA1D98BDC100E213A5 /* ZLIndicatorMessageHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLIndicatorMessageHUD.h; sourceTree = "<group>"; };
@@ -153,8 +153,8 @@
 		EA5DCCA51D98BDC100E213A5 /* ZLIndicatorMessageHUD */ = {
 			isa = PBXGroup;
 			children = (
-				EA5DCCA61D98BDC100E213A5 /* NSString+Size.h */,
-				EA5DCCA71D98BDC100E213A5 /* NSString+Size.m */,
+				EA5DCCA61D98BDC100E213A5 /* NSString+ZLSize.h */,
+				EA5DCCA71D98BDC100E213A5 /* NSString+ZLSize.m */,
 				EA5DCCA81D98BDC100E213A5 /* UIView+ZLExtension.h */,
 				EA5DCCA91D98BDC100E213A5 /* UIView+ZLExtension.m */,
 				EA5DCCAA1D98BDC100E213A5 /* ZLIndicatorMessageHUD.h */,
@@ -294,7 +294,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EA5DCCAC1D98BDC100E213A5 /* NSString+Size.m in Sources */,
+				EA5DCCAC1D98BDC100E213A5 /* NSString+ZLSize.m in Sources */,
 				EA5DCC7A1D98BD5300E213A5 /* ViewController.m in Sources */,
 				EA5DCC771D98BD5300E213A5 /* AppDelegate.m in Sources */,
 				EA5DCCAD1D98BDC100E213A5 /* UIView+ZLExtension.m in Sources */,

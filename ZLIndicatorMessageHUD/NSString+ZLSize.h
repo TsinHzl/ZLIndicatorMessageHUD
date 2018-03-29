@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NSString (Size)
+@interface NSString (ZLSize)
 
-- (CGSize)sizeWithMaxSize:(CGSize)maxSize font:(CGFloat )font;
+- (CGSize)zl_sizeWithMaxSize:(CGSize)maxSize font:(CGFloat )font;
 
-+ (NSString *)cachePath;
++ (NSString *)zl_cachePath;
 
 
 @end

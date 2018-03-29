@@ -6,18 +6,18 @@
 //  Copyright © 2016年 MacTsin. All rights reserved.
 //
 
-#import "NSString+Size.h"
+#import "NSString+ZLSize.h"
 
-@implementation NSString (Size)
+@implementation NSString (ZLSize)
 
-- (CGSize)sizeWithMaxSize:(CGSize)maxSize font:(CGFloat )font
+- (CGSize)zl_sizeWithMaxSize:(CGSize)maxSize font:(CGFloat )font
 {
     NSMutableDictionary *attrsDic = [NSMutableDictionary dictionary];
     attrsDic[NSFontAttributeName] = [UIFont systemFontOfSize:font];
     return [self boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:attrsDic context:nil].size;
 }
 
-+ (NSString *)cachePath
++ (NSString *)zl_cachePath
 {
     NSString *path = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
     path = [path stringByAppendingPathComponent:@"ca.plist"];

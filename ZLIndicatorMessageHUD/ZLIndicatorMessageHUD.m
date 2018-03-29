@@ -8,7 +8,7 @@
 
 #import "ZLIndicatorMessageHUD.h"
 #import "UIView+ZLExtension.h"
-#import "NSString+Size.h"
+#import "NSString+ZLSize.h"
 
 static UIWindow *window_;
 static UILabel *showingLabel_;
@@ -84,11 +84,11 @@ static CGFloat const ZLShowingViewAlpha = 0.75f;
 
 + (void)setShowingLabelWidth {
     CGSize maxSzie = CGSizeMake(MAXFLOAT, showingLabel_.zl_height);
-    CGFloat width = [showingLabel_.text sizeWithMaxSize:maxSzie font:ZLIFontSize].width + 30;
+    CGFloat width = [showingLabel_.text zl_sizeWithMaxSize:maxSzie font:ZLIFontSize].width + 30;
     if (width >= ZLIScreenWidth) {
         NSLog(@"显示信息太长，请精简一下！");
         showingLabel_.text = @"显示信息太长，请精简一下！";
-        width = [showingLabel_.text sizeWithMaxSize:maxSzie font:ZLIFontSize].width + 30;
+        width = [showingLabel_.text zl_sizeWithMaxSize:maxSzie font:ZLIFontSize].width + 30;
     }
     showingLabel_.zl_width = width;
     showingLabel_.center = window_.rootViewController.view.center;
@@ -102,10 +102,10 @@ static CGFloat const ZLShowingViewAlpha = 0.75f;
     [UIView animateWithDuration:ZLITimeInterval animations:^{
         showingLabel_.alpha = ZLShowingViewAlpha;
     } completion:^(BOOL finished) {
-        
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)((timeDelay > 0 ? timeDelay : ZLITimeDelay) * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [self zl_hide];
-        });
+        [self performSelector:@selector(zl_hide) withObject:nil afterDelay:timeDelay > 0 ? timeDelay : ZLITimeDelay];
+//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)((timeDelay > 0 ? timeDelay : ZLITimeDelay) * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//            [self zl_hide];
+//        });
         
     }];
 }
