@@ -33,7 +33,7 @@
 }
 
 - (void)test3 {
-    [ZLIndicatorMessageHUD zl_showWithMessage:@"测试信息测试信息测试信息测试信息测试信息测试信息测试信息测试信息测试信息测试信息测试信息测试信息"];
+    [ZLIndicatorMessageHUD zl_showWithMessage:@"测试信息测试信息测试信息测试信息测试信"];
 }
 - (void)hide {
     [super didReceiveMemoryWarning];
@@ -42,6 +42,6 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [self test2];
+    [self test3];
 }
 @end

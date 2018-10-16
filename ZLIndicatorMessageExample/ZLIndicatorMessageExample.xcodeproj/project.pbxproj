@@ -231,6 +231,7 @@
 				TargetAttributes = {
 					EA5DCC6E1D98BD5300E213A5 = {
 						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = GYDMVUU7KH;
 					};
 					EA5DCC871D98BD5400E213A5 = {
 						CreatedOnToolsVersion = 7.1;
@@ -438,6 +439,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = GYDMVUU7KH;
 				INFOPLIST_FILE = ZLIndicatorMessageExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -450,6 +452,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = GYDMVUU7KH;
 				INFOPLIST_FILE = ZLIndicatorMessageExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

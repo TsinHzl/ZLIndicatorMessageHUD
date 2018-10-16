@@ -10,8 +10,8 @@
 #import "UIView+ZLExtension.h"
 #import "NSString+ZLSize.h"
 
-static UIWindow *window_;
-static UILabel *showingLabel_;
+static UIWindow *window_ = nil;
+static UILabel *showingLabel_ = nil;
 
 #define ZLIScreenBouds [UIScreen mainScreen].bounds
 #define ZLIScreenWidth [UIScreen mainScreen].bounds.size.width
@@ -99,13 +99,12 @@ static CGFloat const ZLShowingViewAlpha = 0.75f;
     
     showingLabel_.text = message;
     [self setShowingLabelWidth];
+    
+    __weak typeof(self) weakSelf = self;
     [UIView animateWithDuration:ZLITimeInterval animations:^{
         showingLabel_.alpha = ZLShowingViewAlpha;
     } completion:^(BOOL finished) {
-        [self performSelector:@selector(zl_hide) withObject:nil afterDelay:timeDelay > 0 ? timeDelay : ZLITimeDelay];
-//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)((timeDelay > 0 ? timeDelay : ZLITimeDelay) * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//            [self zl_hide];
-//        });
+        [weakSelf performSelector:@selector(zl_hide) withObject:nil afterDelay:timeDelay > 0 ? timeDelay : ZLITimeDelay];
         
     }];
 }
